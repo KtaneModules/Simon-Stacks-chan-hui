@@ -1,17 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Simon Stacks — Keep Talking and Nobody Explodes Module</title>
     <meta name="viewport" content="initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Simon Stacks — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/font.css">
     <script src="js/ktane-utils.js"></script>
 </head>
 <body>
-    <div id="ManualContent">
         <div class="section">
             <div class="page page-bg-01">
                 <div class="page-header">
@@ -23,26 +22,32 @@
                     <h2>On the Subject of Simon Stacks</h2>
                     <p class="flavour-text">Don't worry Simon! It's not your tax.</p>
 
-                    <p>This module has 19 hexes which form an hexagon.</p>
-                    <p>Follow the steps below 5 times to solve the module.</p>
+                    <p>This module has 19 hexes which form a hexagon.</p>
+                    <p>Follow the steps below through 5 stages to solve the module.</p>
 
-                    <h3>Getting Solution</h3>
+                    <h3>Getting a stage's solution</h3>
                     <p></p>
-                    <li>Some of hexes will flash with color.</li>
-                    <li>Flashed hexes' pattern is some of the Table HEX's flashed patterns got XORed. (see the table below)</li>
-                    <li>With the color and pattern, get the hex pattern(s).</li>
-                    <li>XOR all the hex pattern(s) to make solution pattern.</li>
+                    <ul>
+                        <li>Some of the hexes will flash, and a single color will be shown on the hexes.</li>
+                        <li>The module's flashed pattern is the result of XOR'ing some of the patterns in the "Flashed" column of Table HEX(see page 2).</li>
+                        <li>Using the color shown on the hexes as the column, obtain cells within that column that is in the same rows as the "Flashed" column.</li>
+                        <li>XOR all of the obtained cell’s patterns to obtain the solution pattern.</li>
+                    </ul>
 
-                    <h3>Submitting</h3>
+                    <h3>Submission</h3>
                     <p></p>
-                    <li>When you press the background, the flashing will stop.</li>
-                    <li>Press hexes and form the solution pattern.</li>
-                    <li>Then, press the background again. if submitted pattern wasn't right, strike will incur. Otherwise module will proceed to next stage.</li>
+                    <ul>
+                        <li>To start submitting, press the background, at which the flashing will stop.</li>
+                        <li>Press hexes to form the solution pattern.</li>
+                        <li>Finally, press the background one more time to submit the current pattern. If the submitted pattern is incorrect, the module will strike. Otherwise, the module will advance to the next stage.</li>
+                    </ul>
 
-                    <h3>Other Stages</h3>
+                    <h3>Later stages</h3>
                     <p></p>
-                    <li>Repeat the steps above with the added flash.</li>
-                    <li>Don't forget to XOR latest stage's solution pattern with hex pattern(s) when making solution pattern.</li>
+                    <ul>
+                        <li>Start with the submitted pattern in the previous stage.</li>
+                        <li>Repeat the steps above with the added flash.</li>
+                    </ul>
                 </div>
                 <div class="page-footer relative-footer">Page 1 of 2</div>
             </div>
@@ -123,6 +128,5 @@
                 <div class="page-footer relative-footer">Page 2 of 2</div>
             </div>
         </div>
-    </div>
 </body>
 </html>
