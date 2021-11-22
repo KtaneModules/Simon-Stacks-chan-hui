@@ -323,7 +323,7 @@ public class simonstacksScript : MonoBehaviour
 		if (cutInBlank.Length == 1 && (cutInBlank[0].Equals("GO", StringComparison.InvariantCultureIgnoreCase) 
 		                               || cutInBlank[0].Equals("SUBMIT", StringComparison.InvariantCultureIgnoreCase)))
 		{
-			background.GetComponent<KMSelectable>().OnInteract();
+			background.OnInteract();
 			yield return null;
 		}
 		else
@@ -361,5 +361,29 @@ public class simonstacksScript : MonoBehaviour
 			}
 		}
 		
+	}
+
+	public IEnumerator TwitchHandleForcedSolve()
+    {
+		int start = CurrentStage;
+		for (int i = start; i < 6; i++)
+        {
+			if (!SubmissionMode)
+            {
+				background.OnInteract();
+				yield return new WaitForSeconds(.1f);
+			}
+			int[] answer = GetSolution(CurrentStage).hexes;
+			for (int j = 0; j < answer.Length; j++)
+            {
+				if (SubmittedHex.hexes[j] != answer[j])
+                {
+					hexes[j].OnInteract();
+					yield return new WaitForSeconds(.05f);
+				}
+            }
+			background.OnInteract();
+			yield return new WaitForSeconds(.1f);
+		}
 	}
 }
