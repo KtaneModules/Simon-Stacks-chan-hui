@@ -14,9 +14,9 @@ MonoBehaviour:
   id: simonstacks
   title: Simon Stacks
   author: Piissii
-  description: "Simon Stacks 1.0\nsubtitle : Colored Heximon\n\r\nThis module has
+  description: "Simon Stacks 2.0\nsubtitle : Colored Heximon\n\r\nThis module has
     TP-Support.\r\n\r\nManual available here:\r\nhttps://ktane.timwi.de/HTML/Simon%20Stacks.html\r\n\r\n\r\n\r\nModule
     ID: simonstacks\nCreated by: Piissii"
-  version: 1.0
+  version: 2.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 4888d71d09a84b94a939c7dbb90374ff, type: 3}

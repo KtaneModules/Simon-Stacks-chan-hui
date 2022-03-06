@@ -78,7 +78,9 @@ public class simonstacksScript : MonoBehaviour
 	private Hex SubmittedHex = new Hex();
 	
 	private bool SubmissionMode = false;
+	private bool ShouldSound = false;
 	private int CurrentStage = 1;
+	private int TotalStage = 3;
 	
 	//logging
 	static int moduleIdCounter = 1;
@@ -110,7 +112,9 @@ public class simonstacksScript : MonoBehaviour
 
 	void GetStages()
 	{
-		for (int i = 0; i < 5; i++)
+		TotalStage = UnityEngine.Random.Range(3, 6);
+		Debug.LogFormat("[Simon Stacks #{0}] Generating {1} Stages...", moduleId, TotalStage);
+		for (int i = 0; i < TotalStage; i++)
 		{
 			Hex tempflash = new Hex();
 			Hex tempSolution = new Hex();
@@ -157,7 +161,7 @@ public class simonstacksScript : MonoBehaviour
 				}
 			}
 
-			if (CurrentStage > 1)
+			if (ShouldSound)
 			{
 				if (Colors[i] == "Red")
 				{
@@ -169,7 +173,7 @@ public class simonstacksScript : MonoBehaviour
 				}
 				else if (Colors[i] == "Blue")
 				{
-					audio.PlaySoundAtTransform("SFXB", transform);
+					audio.PlaySoundAtTransform("SFXBNew", transform);
 				}
 				else if (Colors[i] == "Yellow")
 				{
@@ -247,6 +251,7 @@ public class simonstacksScript : MonoBehaviour
 		}
 		else
 		{
+			ShouldSound = true;
 			foreach (var hex in hexes)
 			{
 				hex.GetComponent<MeshRenderer>().material = hexMats[4];
@@ -255,7 +260,7 @@ public class simonstacksScript : MonoBehaviour
 			{
 				Debug.LogFormat("[Simon Stacks #{0}] You Submitted {1}, Which is right!", moduleId, HexToString(SubmittedHex));
 				CurrentStage++;
-				if (CurrentStage > 5)
+				if (CurrentStage > TotalStage)
 				{
 					GetComponent<KMBombModule>().HandlePass();
 					audio.PlaySoundAtTransform("Solved", transform);
