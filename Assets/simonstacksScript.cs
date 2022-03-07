@@ -371,7 +371,7 @@ public class simonstacksScript : MonoBehaviour
 	public IEnumerator TwitchHandleForcedSolve()
     {
 		int start = CurrentStage;
-		for (int i = start; i < 6; i++)
+		for (int i = start; i < TotalStage + 1; i++)
         {
 			if (!SubmissionMode)
             {
